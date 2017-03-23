@@ -99,6 +99,12 @@ public class kalkulator extends javax.swing.JFrame {
 
         jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        dadi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dadiActionPerformed(evt);
+            }
+        });
+
         jLabel4.setText("HASIL");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -222,6 +228,10 @@ public class kalkulator extends javax.swing.JFrame {
        dadi.setText(String.valueOf(hasil));
        
     }//GEN-LAST:event_hitungActionPerformed
+
+    private void dadiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dadiActionPerformed
 
     /**
      * @param args the command line arguments
