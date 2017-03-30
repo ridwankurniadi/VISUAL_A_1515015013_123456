@@ -51,7 +51,7 @@ public class pelanggan extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btn_tambah = new javax.swing.JButton();
         btn_ulang = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnsimpan = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -98,9 +98,9 @@ public class pelanggan extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
-        btn_tambah.setText("Tambah");
+        btn_tambah.setText("Simpan");
         btn_tambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_tambahActionPerformed(evt);
@@ -108,7 +108,7 @@ public class pelanggan extends javax.swing.JFrame {
         });
         jPanel2.add(btn_tambah);
 
-        btn_ulang.setText("Ulang");
+        btn_ulang.setText("Tambah");
         btn_ulang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ulangActionPerformed(evt);
@@ -116,13 +116,13 @@ public class pelanggan extends javax.swing.JFrame {
         });
         jPanel2.add(btn_ulang);
 
-        jButton1.setText("Update");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnsimpan.setText("Update");
+        btnsimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnsimpanActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1);
+        jPanel2.add(btnsimpan);
 
         jButton2.setText("Hapus");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -253,7 +253,7 @@ public class pelanggan extends javax.swing.JFrame {
         data[2] = cmbkota.getSelectedItem().toString();
         
         model.addRow(data);
-        JOptionPane.showMessageDialog(this,"Data Anda Telah Terdaftar");
+        JOptionPane.showMessageDialog(this,"Data Anda Telah Tersimpan");
     }//GEN-LAST:event_btn_tambahActionPerformed
 
     private void btn_ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ulangActionPerformed
@@ -261,6 +261,8 @@ public class pelanggan extends javax.swing.JFrame {
         txttelepon.setText("");
         nama.setText("");
         txttelepon.requestFocus();
+        nama.requestFocus();
+        JOptionPane.showMessageDialog(this,"Silahkan Tambah Data");
     }//GEN-LAST:event_btn_ulangActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -271,24 +273,27 @@ public class pelanggan extends javax.swing.JFrame {
         String nama_edit = jTable1.getValueAt(baris, 1).toString();
         String angkatan_edit = jTable1.getValueAt(baris, 2).toString();
         
-        txttelepon.setText(nim_edit);
-        nama.setText(nama_edit);
+        nama.setText(nim_edit);
+        txttelepon.setText(nama_edit);
         cmbkota.setSelectedItem(angkatan_edit);
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsimpanActionPerformed
         // TODO add your handling code here:
         int baris = jTable1.getSelectedRow();
         
-        jTable1.setValueAt(txttelepon.getText(), baris, 0);
-        jTable1.setValueAt(nama.getText(), baris, 1);
+        jTable1.setValueAt(nama.getText(), baris, 0);
+        jTable1.setValueAt(txttelepon.getText(), baris, 1);
         jTable1.setValueAt(cmbkota.getSelectedItem(), baris, 2);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        txttelepon.requestFocus();
+        nama.requestFocus();
+    }//GEN-LAST:event_btnsimpanActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         int baris = jTable1.getSelectedRow();
         model.removeRow(baris);
+        JOptionPane.showMessageDialog(this,"Data Terhapus");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -357,8 +362,8 @@ public class pelanggan extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_tambah;
     private javax.swing.JButton btn_ulang;
+    private javax.swing.JButton btnsimpan;
     private javax.swing.JComboBox cmbkota;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
