@@ -136,6 +136,11 @@ public class postest4 extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Kg");
 
+        txtnotelpon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnotelponActionPerformed(evt);
+            }
+        });
         txtnotelpon.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtnotelponKeyPressed(evt);
@@ -540,6 +545,10 @@ public class postest4 extends javax.swing.JFrame {
         proses.setEnabled(true);
         }   
     }//GEN-LAST:event_expressMouseReleased
+
+    private void txtnotelponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnotelponActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnotelponActionPerformed
     /**
      * @param args the command line arguments
      */
